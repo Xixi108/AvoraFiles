@@ -1,0 +1,96 @@
+﻿:root {
+  --bg: #f6f4ee;
+  --ink: #1f1f1f;
+  --accent: #c65d3a;
+  --card: #ffffff;
+  --line: #e2ddd2;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: radial-gradient(circle at top right, #fff6d8 0%, var(--bg) 55%);
+  color: var(--ink);
+}
+
+.hero {
+  padding: 3rem 1rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 0.03em;
+}
+
+.hero p {
+  margin-top: 0.75rem;
+  color: #4f4b43;
+}
+
+.wrap {
+  width: min(1100px, 92vw);
+  margin: 0 auto 3rem;
+  display: grid;
+  gap: 2.5rem;
+}
+
+section h2 {
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--accent);
+  padding-left: 0.75rem;
+  font-size: 1.35rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.6rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transform: translateY(8px);
+  opacity: 0;
+  animation: rise 0.5s ease forwards;
+}
+
+.card img,
+.card video {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.card p {
+  margin: 0.65rem 0.25rem 0.2rem;
+  font-size: 0.92rem;
+}
+
+.video-grid {
+  grid-template-columns: minmax(220px, 480px);
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 2rem;
+  }
+
+  .wrap {
+    gap: 2rem;
+  }
+}
